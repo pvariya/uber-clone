@@ -33,6 +33,6 @@ loginUser
 );
 
 userRouter.get("/profile",authUser,getUserProfile);
-userRouter.get("/login",authUser,logoutUser)
+userRouter.get("/logout",authUser,logoutUser)
 
 module.exports = userRouter;
