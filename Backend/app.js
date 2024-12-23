@@ -6,15 +6,15 @@ const cors = require("cors");
 const cookies = require("cookie-parser");
 const connectdB = require("./db/db");
 const userRouter = require("./route/user.route");
-const captainRaouter = require("./route/captain.route");
+const captainRaouter = require("./route/captain.route")
 
 connectdB();
 app.use(cors());
 app.use(express.json());
 app.use(cookies())
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }))
 app.get("/", (req, res) => {
-  res.send("Hello, World!");
+  res.send("Hello, World!")
 });
 
 app.use("/user", userRouter);
