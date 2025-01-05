@@ -10,9 +10,16 @@ module.exports.registerCaptain = async (req, res, next) => {
   if (!error.isEmpty()) {
     return res.status(400).json({ error: error.array() });
   }
-
+  
+  
   const { fullname, email, password, vehicle } = req.body;
-
+  const existingCaptain = await captainModel.findOne({ email});
+  if (existingCaptain) {
+      return res.status(400).json({
+          message: "Failed to register captain",
+          error: "Email already exists",
+      });
+  }
   if (!fullname || !fullname.firstname || !fullname.lastname) {
     return res.status(400).json({ message: "Full name is required" });
   }

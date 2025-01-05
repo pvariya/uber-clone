@@ -9,30 +9,31 @@ export const CaptainDataContext = createContext();
 //     }
 //     return context;
 // };
+
 export const CaptainContext = ({ children }) => {
-    const [captain, setCaptain] = useState(null);
-    const [isLoading,setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
+  const [captain, setCaptain] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-    const updateContext = (captain) => {
-        setCaptain(captain);
-    }
+  const updateContext = (captainData) => {
+    setCaptain(captainData);
+  };
 
-    const value = {
-        captain,
-        isLoading,
-        error,
-        updateContext,
-        setIsLoading,
-        setError,
-        updateContext
-    }
+  const value = {
+    captain,
+    isLoading,
+    error,
+    setCaptain, 
+    setIsLoading,
+    setError,
+    updateContext,
+  };
 
-    return (
-        <CaptainDataContext.Provider value={value}>
-            {children}
-        </CaptainDataContext.Provider>
-    );
+  return (
+    <CaptainDataContext.Provider value={value}>
+      {children}
+    </CaptainDataContext.Provider>
+  );
 };
 
 export default CaptainContext;

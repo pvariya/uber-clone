@@ -45,7 +45,7 @@ const captainsSchema = new mongoose.Schema({
       type: String,
       required: true,
       minlength: [3, "Vehicle plate must be at least 6 characters long"],
-      // unique: true,
+    
     },
     capacity: {
       type: Number,
