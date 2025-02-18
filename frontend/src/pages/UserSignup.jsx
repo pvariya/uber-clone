@@ -25,7 +25,7 @@ const UserSignup = () => {
       password,
     };
     try {
-      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/user/register`, newUser);
+      const res = await axios.post(`https://uber-clone-1-9e48.onrender.com/user/register`, newUser);
 
       if (res.status === 201) {
         const { user } = res.data;
