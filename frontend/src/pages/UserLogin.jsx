@@ -19,7 +19,7 @@ const Userlogin = () => {
       password
     }
 
-    const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/user/login`, userData)
+    const res = await axios.post(`https://uber-clone-1-9e48.onrender.com/user/login`, userData)
     if (res.status === 200) {
       const data = res.data
       setUser(data.user)
