@@ -34,7 +34,7 @@ const CaptainSignup = () => {
     };
   
     try {
-      const res = await axios.post(`${import.meta.env.VITE_BASE_URL}/captain/register`, captaindata);
+      const res = await axios.post(`https://uber-clone-1-9e48.onrender.com/captain/register`, captaindata);
     
       if (res.status === 201) {
         const data = res.data;
